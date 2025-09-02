@@ -13,7 +13,7 @@ public class App3 {
         confirmacao = scan.nextLine();
     }while(!senha.equals(confirmacao));
     
-    System.out.println("Senha criasda com sucesso!");
+    System.out.println("Senha criada com sucesso!");
 }
 
 }
