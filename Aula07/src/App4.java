@@ -1,4 +1,3 @@
-package Estudos_Java_Univas.Aula07;
 import java.util.Scanner;
 
 public class App4 {
