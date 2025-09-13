@@ -6,12 +6,15 @@ public class App {
 
         System.out.println("Fibonacci:\n");
 
-        int num = 1;
+        int num = 0;
+        int num1 = 1;
         int soma = 0;
-        int antes;
+
         for(int cont = 0; cont <= 10; cont++){
-            soma = num + soma;
-            antes = num;
+            System.out.println(num + " + " + num1 + " =");
+            soma = num + num1;
+            num = num1;
+            num1 = soma;
             System.out.println(soma);
             
         }
