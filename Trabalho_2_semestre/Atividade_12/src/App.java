@@ -12,5 +12,19 @@ public class App {
 
         System.out.println("Digite um número: ");
         int num = leia.nextInt();
+        int somados = 0;
+
+        for(int cont = 1; cont < num; cont++){
+            if(num % cont == 0){
+                somados += cont;
+            }
+        }
+
+        if(somados == num){
+            System.out.println("O número " + num + " é perfeito!");
+        }
+        else{
+            System.out.println("O número " + num + " não é perfeito!");
+        }
     }
 }

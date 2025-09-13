@@ -9,20 +9,14 @@ public class App {
         System.out.println("Série harmônica:\n");
 
         System.out.println("Digite um número: ");
-        int n = leia.nextInt();
-        int soma = 0;
+        double n = leia.nextDouble();
+        double soma = 1;
 
-        for(int cont = 2; cont <= n; cont++){
-            if(cont == 2){
-                soma = (n/cont) + 1;
-                System.out.println(soma);
-            }
-            else{
-                soma = (n/cont) + soma;
-                System.out.println(soma);
-            }
-
+        for(double cont = 1; cont <= n; cont++){
+            soma = soma + 1/cont;
         }
+
+        System.out.println("A soma da séria harmônica é: " + soma);
         
     }
 }
