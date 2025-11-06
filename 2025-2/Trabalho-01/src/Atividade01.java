@@ -1,4 +1,4 @@
-public class App {
+public class Atividade01 {
     public static void main(String[] args) throws Exception {
         
     }
