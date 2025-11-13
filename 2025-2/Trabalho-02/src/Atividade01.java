@@ -1,4 +1,4 @@
-public class app {
+public class Atividade01 {
     public static void main(String[] args) {
         String[] nomes = { "João", "Maria", "Carlos" };
         String[] sobrenomes = { "Silva", "Santos" };

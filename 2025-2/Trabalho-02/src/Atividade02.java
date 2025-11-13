@@ -1,4 +1,4 @@
-public class app2 {
+public class Atividade02 {
     public static void main(String[] args) {
         int[] acessoSetorA = { 101, 102, 105, 108 };
         int[] acessoSetorB = { 105, 101, 109, 110 };
