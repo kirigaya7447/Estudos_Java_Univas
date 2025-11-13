@@ -1,4 +1,4 @@
-public class app3 {
+public class Atividade03 {
     public static void main(String[] args) {
         String[] times = { "Time A", "Time B", "Time C" };
         String[] turnos = { "Turno 1", "Turno 2" };

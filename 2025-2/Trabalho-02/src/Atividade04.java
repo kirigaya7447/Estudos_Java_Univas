@@ -1,4 +1,4 @@
-public class app4 {
+public class Atividade04 {
     public static void main(String[] args) {
         String[] nomes = { "Ana", "Antonio", "Beatriz", "Carlos" };
         String[] letras = { "A", "B" };

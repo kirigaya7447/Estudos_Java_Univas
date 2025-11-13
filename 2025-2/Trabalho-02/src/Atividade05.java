@@ -1,4 +1,4 @@
-public class app5 {
+public class Atividade05 {
     public static void main(String[] args) {
         String[] matriculadosMusica = { "Ana", "Beto", "Caio", "Maria" };
         String[] matriculadosEsporte = { "Davi", "Beto", "Maria", "Zeca" };
