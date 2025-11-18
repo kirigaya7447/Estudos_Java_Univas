@@ -16,7 +16,7 @@ public class Atividade04 {
             for(int ana = 0; ana < matriz[0].length; ana++){
                 System.out.print("| " + matriz[pedro][ana]);
             }
-            System.out.println(" |");
+            System.out.println("|");
         }
 
         System.out.println("É: " + soma);
