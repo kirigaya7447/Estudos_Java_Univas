@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class App5 {
     public static void main(String[] args){
-        int nums[] = {90, 10, 70, 50, 30, 80};
+        int nums[] = {90, 10, 70, 50};
         
         Arrays.sort(nums);
         for(int cont : nums){
