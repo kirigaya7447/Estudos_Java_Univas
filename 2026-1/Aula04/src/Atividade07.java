@@ -5,7 +5,7 @@ public class Atividade07 {
     Scanner le = new Scanner(System.in);
         double salario = recebeSalario(le);
         double parcela = recebeParcela(le);
-        if(aprovarEmprestimo()){
+        if(aprovarEmprestimo(salario, parcela)){
             System.out.println("Empréstimo aprovado!");
         }
         else{
@@ -14,26 +14,26 @@ public class Atividade07 {
     }
 
     public static double recebeSalario(Scanner le){
-        System.out.println("Digite o valor do seu salário:")
+        System.out.println("Digite o valor do seu salário:");
         double salario = le.nextDouble();
         return salario;
     }
 
     public static double recebeParcela(Scanner le){
-        System.out.println("Digite o valor da parcela a ser verificada:")
+        System.out.println("Digite o valor da parcela a ser verificada:");
         double parcela = le.nextDouble();
         return parcela;
     }
 
     public static boolean aprovarEmprestimo(double salarioCliente, double parcelaEmprestimo){
         boolean aprovado;
-        double porcentagem = (salario * 30) / 100;
+        double porcentagem = (salarioCliente * 30) / 100;
         if(parcelaEmprestimo > porcentagem){
             aprovado = false;
         }
         else{
             aprovado = true;
         }
-    }
     return aprovado;
+    }
 }

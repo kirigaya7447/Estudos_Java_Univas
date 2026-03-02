@@ -7,10 +7,10 @@ public class Atividade06 {
     }
 
     public static String recebeIdade(Scanner le){
-        System.out.println("Digite sua idade:")
+        System.out.println("Digite sua idade:");
         int idade = le.nextInt();
         if(isMaiorDeIdade(idade)){
-            return "É maior de idade!"
+            return "É maior de idade!";
         }
         else{
             return "Não é maior de idade!";
@@ -22,7 +22,7 @@ public class Atividade06 {
         if(idade >= 18){
             eMaior = true;
         }
-        else if{
+        else{
             eMaior = false;
         }
 
