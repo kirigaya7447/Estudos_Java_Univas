@@ -3,14 +3,21 @@ import java.util.Scanner;
 public class Atividade09 {
     public static void main(String[] args) throws Exception {
     Scanner le = new Scanner(System.in);
-        System.out.println("Hello, World!");
+        System.out.println(recebeSegundos(le));
+    }
+
+    public static String recebeSegundos(Scanner len){
+        System.out.println("Digite a quantidade de segundos: ");
+        int segundos = len.nextInt();
+        return formatarSegundos(segundos);
     }
 
     public static String formatarSegundos(int segundos){
         int horas = segundos / 3600;
         segundos = segundos % 3600;
-        int minutos = segundos * 60;
-        return horas + " horas, " + minutos + " minutos e" + segundos + " segundos";
+        int minutos = segundos / 60;
+        segundos = segundos % 60;
+        return horas + " horas, " + minutos + " minutos e " + segundos + " segundos";
 
     }
 }
