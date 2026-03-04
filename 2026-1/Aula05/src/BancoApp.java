@@ -8,14 +8,16 @@ public class BancoApp {
         int menu = 0;
         while (menu != 9) {
             menu = menu(scan, saldo);
+            
         }
     }
 
     private static int menu(Scanner scan, double saldo){
-        System.out.println("Selecione a opção desejada!" +
+        System.out.println("\n----Selecione a opção desejada!----" +
+        "\nValor do saldo: R$" + saldo +
         "\nOpção 1 - Sacar" + 
         "\nOpção 2 - Depositar"+
-        "\nOpção 9 - Sair");
+        "\nOpção 9 - Sair\n");
         int menu = scan.nextInt();
         if(menu == 1){
             realizaSaque(scan, saldo);
@@ -27,14 +29,14 @@ public class BancoApp {
             menu = menu;
         }
         else{
-            System.out.println("Opção inválida!");
+            System.out.println("\n////Opção inválida!\\\\\\\\ \n");
             menu = 0;
         }
 
         return menu;
     }
 
-    private static void realizaSaque(Scanner scan, double saldo) {
+    private static double realizaSaque(Scanner scan, double saldo) {
         System.out.println("Digite o valor do saque: ");
         int valorSaque = scan.nextInt();
 
@@ -44,9 +46,11 @@ public class BancoApp {
             System.out.println("Saque realizado com sucesso!");
             System.out.println("Novo valor do saldo: " + novoSaldo);
         }
+
+        return novoSaldo;
     }
 
-    private static void realizaDeposito(Scanner scan, double saldo) {
+    private static double realizaDeposito(Scanner scan, double saldo) {
         System.out.println("Digite o valor do depósito: ");
         int valorSaque = scan.nextInt();
 
@@ -56,5 +60,7 @@ public class BancoApp {
             System.out.println("Depósito realizado com sucesso!");
             System.out.println("Novo valor do saldo: " + novoSaldo);
         }
+
+        return novoSaldo;
     }
 }
