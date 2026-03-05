@@ -5,35 +5,32 @@ public class BancoApp {
         Scanner scan = new Scanner(System.in);
         System.out.println("Digite o valor do seu saldo: ");
         double saldo = scan.nextInt();
-        int menu = 0;
-        while (menu != 9) {
-            menu = menu(scan, saldo);
-            
-        }
+        menu(scan, saldo);
+
+        scan.close();
     }
 
-    private static int menu(Scanner scan, double saldo){
-        System.out.println("\n----Selecione a opção desejada!----" +
-        "\nValor do saldo: R$" + saldo +
-        "\nOpção 1 - Sacar" + 
-        "\nOpção 2 - Depositar"+
-        "\nOpção 9 - Sair\n");
-        int menu = scan.nextInt();
-        if(menu == 1){
-            realizaSaque(scan, saldo);
-        }
-        else if(menu == 2){
-            realizaDeposito(scan, saldo);
-        }
-        else if(menu == 9){
-            menu = menu;
-        }
-        else{
-            System.out.println("\n////Opção inválida!\\\\\\\\ \n");
-            menu = 0;
-        }
+    private static void menu(Scanner scan, double saldo) {
+        int menu = 0;
+        do {
+            System.out.println("\n----Selecione a opção desejada!----" +
+                    "\nValor do saldo: R$" + saldo +
+                    "\nOpção 1 - Sacar" +
+                    "\nOpção 2 - Depositar" +
+                    "\nOpção 9 - Sair\n");
+            menu = scan.nextInt();
+            if (menu == 1) {
+                saldo = realizaSaque(scan, saldo);
+            } else if (menu == 2) {
+                saldo = realizaDeposito(scan, saldo);
+            } else if (menu == 9) {
 
-        return menu;
+            } else {
+                System.out.println("\n////Opção inválida!\\\\\\\\ \n");
+                menu = 0;
+            }
+
+        } while (menu != 9);
     }
 
     private static double realizaSaque(Scanner scan, double saldo) {
@@ -41,10 +38,15 @@ public class BancoApp {
         int valorSaque = scan.nextInt();
 
         double novoSaldo = CaixaEletronico.sacar(saldo, valorSaque);
-        
-        if(saldo != novoSaldo){
+
+        if (saldo != novoSaldo) {
             System.out.println("Saque realizado com sucesso!");
             System.out.println("Novo valor do saldo: " + novoSaldo);
+        } else if (saldo == novoSaldo) {
+            System.out.println("Saldo insuficiente!");
+            System.out.println("Valor do saldo: " + novoSaldo);
+        } else {
+            System.out.println("Falha encontrada no sistema!");
         }
 
         return novoSaldo;
@@ -56,7 +58,7 @@ public class BancoApp {
 
         double novoSaldo = CaixaEletronico.depositar(saldo, valorSaque);
 
-        if(saldo != novoSaldo){
+        if (saldo != novoSaldo) {
             System.out.println("Depósito realizado com sucesso!");
             System.out.println("Novo valor do saldo: " + novoSaldo);
         }
