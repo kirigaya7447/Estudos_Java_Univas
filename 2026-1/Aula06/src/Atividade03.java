@@ -7,7 +7,6 @@ public class Atividade03 {
         Random aleatorio = new Random();
         int segredo = aleatorio.nextInt(0, 10);
         String retorno;
-        System.out.println(segredo + "!");
 
         do {
             retorno = Modulacao03.avaliarPalpite(Modulacao03.recebePalpite(lendo), segredo);
