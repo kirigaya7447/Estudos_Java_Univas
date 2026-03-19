@@ -37,7 +37,6 @@ public class RH_Utilitarios {
     }
 
     public static double calcularSalarioLiquido(double salarioBruto, double inss, double ir, double planoSaude) {
-        System.out.println(salarioBruto + "-" + inss + "-" + ir + "-" + planoSaude);
         double salarioSubtraido = salarioBruto - inss - ir - planoSaude;
         return salarioSubtraido;
     }
