@@ -1,16 +1,13 @@
 public class RH_Utilitarios {
     public static double calcularINSS(double salarioBruto) {
-        double inssCalculado;
-        double desconto;
+        double inss;
         if (salarioBruto <= 2000) {
-            desconto = salarioBruto * 0.08;
-            inssCalculado = salarioBruto - desconto;
+            inss = salarioBruto * 0.08;
         } else {
-            desconto = salarioBruto * 0.11;
-            inssCalculado = salarioBruto - desconto;
+            inss = salarioBruto * 0.11;
         }
 
-        return inssCalculado;
+        return inss;
     }
 
     public static double calcularImpostoRenda(double salarioBruto) {
@@ -40,8 +37,8 @@ public class RH_Utilitarios {
     }
 
     public static double calcularSalarioLiquido(double salarioBruto, double inss, double ir, double planoSaude) {
-        double salarioSubtraido;
-        salarioSubtraido = salarioBruto - inss - ir - planoSaude;
+        System.out.println(salarioBruto + "-" + inss + "-" + ir + "-" + planoSaude);
+        double salarioSubtraido = salarioBruto - inss - ir - planoSaude;
         return salarioSubtraido;
     }
 
