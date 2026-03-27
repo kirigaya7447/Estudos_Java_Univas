@@ -6,7 +6,7 @@ public class Atividade03 {
         int num = leia.nextInt();
         System.out.println("Digite a quantidade de vezes a ser multiplicado: ");
         int mult = leia.nextInt();
-        System.out.println(multiplicarRecursivo(num, mult));
+        System.out.println(num + " * " + mult + " = " + multiplicarRecursivo(num, mult));
     }
     public static double multiplicarRecursivo(int a, int b){
         if(b < 1){
