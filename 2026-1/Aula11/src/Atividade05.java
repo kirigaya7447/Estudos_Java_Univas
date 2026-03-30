@@ -5,13 +5,13 @@ public class Atividade05 {
 
         System.out.println("Digite um número para contar os dígitos: ");
         int num = leia.nextInt();
-        System.out.println(contarDigitos(num));
+        System.out.println("A quantidade de caracteres de " + num + " é " + contarDigitos(num));
     }
 
     public static int contarDigitos(int num){
-        if(num < 1){
+        if(num == 0){
             return 0;
         }
-        return num / 10 + contarDigitos((num % 10));
+        return 1 + contarDigitos(num / 10);
     }
 }
