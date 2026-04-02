@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Atividade04 {
+public class dueloEx4 {
     public static int somarImparesIterativo(int n) {
         int soma = 0;
         for (int i = 0; i <= n; i++) {
