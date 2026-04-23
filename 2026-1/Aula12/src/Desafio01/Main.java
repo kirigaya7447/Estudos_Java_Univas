@@ -19,11 +19,11 @@ public class Main {
 
         System.out.println("//MÉDIA\\\\");
 
-        System.out.println("A média do aluno " + a1.nome + " é " + a1.mediaAluno(a1));
+        System.out.println("A média do aluno " + a1.nome + " é " + Aluno.mediaAluno(a1));
 
         System.out.println("//APROVAÇÃO\\\\");
 
-        if(alunoAprovado(a1.mediaAluno(a1))){
+        if(alunoAprovado(Aluno.mediaAluno(a1))){
         System.out.println("Aluno está aprovado!");
         }
         else{
