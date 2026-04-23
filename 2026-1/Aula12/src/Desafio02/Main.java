@@ -19,7 +19,7 @@ public class Main {
 
         System.out.println("////CLASSIFICAÇÃO DO LIVRO\\\\\\\\");
 
-        System.out.println("O livro é um " + l1.isClassic(l1.anoPublicacao));
+        System.out.println("O livro é um " + l1.isClassic(l1));
 
     }
 }

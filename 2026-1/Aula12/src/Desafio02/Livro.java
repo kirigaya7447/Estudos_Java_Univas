@@ -5,8 +5,8 @@ public class Livro {
     String autor;
     int anoPublicacao;
     
-    public static String isClassic(int anoPublicacao){
-        if(anoPublicacao < 2000){
+    public static String isClassic(Livro livro){
+        if(livro.anoPublicacao < 2000){
             return "Clássico";
         }
         else{

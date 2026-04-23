@@ -6,7 +6,7 @@ public class Aluno {
     public double atividade01;
     public double atividade02; 
 
-    public static double mediaAluno(double atividade01, double atividade02){
-        return (atividade01 + atividade02) / 2;
+    public static double mediaAluno(Aluno aluno){
+        return (aluno.atividade01 + aluno.atividade02) / 2;
     }
 }
