@@ -13,7 +13,7 @@ public class Main {
             Produto[] produto = new Produto[5];//Colocar pro pessoal digitar a quantidade de cadastros
 
             if (caminhoCSV.exists()) {
-                carregarProdutosCSV(produto);
+                carregarProdutosCSV(leituraArquivo, produto);
             } else {
                 if (criaArquivoCSV(caminhoCSV)) {
                     System.out.println("Arquivo criado com sucesso!");
@@ -37,7 +37,18 @@ public class Main {
         return arquivoCriado;
     }
 
-    public static void carregarProdutosCSV(Produto[] produto) {
+    public static void carregarProdutosCSV(Scanner leituraArquivo, Produto[] produto) {
+        int cont = 0;
+        while(leituraArquivo.hasNextLine() && cont < produto.length){
+            String leituraLinha = leituraArquivo.nextLine();
+            String[] leitura = leituraLinha.split(";");
 
+            produto[cont] = new Produto();
+            produto[cont].nome = leitura[0];
+            produto[cont].preco = Double.parseDouble(leitura[1]);
+            produto[cont].quantidade = Integer.parseInt(leitura[2]);
+            cont++;
+        }
+        leituraArquivo.close();
     }
 }
