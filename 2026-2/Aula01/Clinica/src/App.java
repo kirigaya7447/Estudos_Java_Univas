@@ -3,42 +3,6 @@ import java.util.Date;
 
 public class App {
     public static void main(String[] args) throws Exception{
-        Agendamento a = new Agendamento();
-        Clinica c = new Clinica();
-        Medico m = new Medico();
-        Paciente p = new Paciente();
-        Secretaria s = new Secretaria();
-
-        a;
-                c;
-                m;
-
-        p.idPaciente = 1;
-        p.nome = "Pedro";
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        p.dataNascimento = df.parse("01/01/2001");
-        p.telefone = "35 12456789";
-        p.email = "pedro@email.com";
-
-        s.idSecretaria = 1;
-        s.nome = "Paolo";
-        s.turno = "Deus Me Livre";
-
-
-
-        System.out.println("Paciente " + p.idPaciente);
-        System.out.println("Nome: " + p.nome);
-        System.out.println("Data de Nascimento: " + p.dataNascimento);
-        System.out.println("Telefone: " + p.telefone);
-        System.out.println("E-mail: " + p.email);
-
-        p.atualizarContato("email2@teste.com", "35 987654321");
-        System.out.println("Após atualização de contatos:");
-
-        System.out.println("Paciente " + p.idPaciente);
-        System.out.println("Nome: " + p.nome);
-        System.out.println("Data de Nascimento: " + p.dataNascimento);
-        System.out.println("Telefone: " + p.telefone);
-        System.out.println("E-mail: " + p.email);
+        Paciente p = new Paciente(1, "João", "?", "11 111111111111", "teste@teste.com");
     }
 }
