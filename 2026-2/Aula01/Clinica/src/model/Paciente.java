@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Date;
 
 public class Paciente {
@@ -62,6 +64,6 @@ public class Paciente {
 
     @Override
     public String toString(){
-        return "ID: " + idPaciente + "Nome: " + nome + "Data de Nascimento: " + dataNascimento + "Telefone: " + telefone + "E-mail:" + email;
+        return "ID: " + idPaciente + "\nNome: " + nome + "\nData de Nascimento: " + dataNascimento + "\nTelefone: " + telefone + "\nE-mail: " + email;
     }
 }

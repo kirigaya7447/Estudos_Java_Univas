@@ -1,11 +1,13 @@
+package modelo;
+
 public class Medico {
     private int idMedico;
     private String nome;
     private String especialidade;
     private String crm;
 
-    public Medico(int idMedico, String nome, String especialidade, String crm){
-        this.idMedico = idMedico;
+    public Medico(int id, String nome, String especialidade, String crm) {
+        this.idMedico = id;
         this.nome = nome;
         this.especialidade = especialidade;
         this.crm = crm;
@@ -15,7 +17,7 @@ public class Medico {
         return idMedico;
     }
 
-    public void setIdMedico(int idMedico) {
+        public void setIdMedico(int idMedico) {
         this.idMedico = idMedico;
     }
 
@@ -43,8 +45,11 @@ public class Medico {
         this.crm = crm;
     }
 
-    @Override
-    public String toString(){
-        return "ID: " + idMedico + "Nome: " + nome + "Especialidade: " + especialidade + "CRM: " + crm;
+    public String toCSV() {
+        return String.join(";", Integer.toString(idMedico), nome, especialidade, crm);
+    }
+
+    public String toString() {
+        return idMedico+" - "+nome;
     }
 }

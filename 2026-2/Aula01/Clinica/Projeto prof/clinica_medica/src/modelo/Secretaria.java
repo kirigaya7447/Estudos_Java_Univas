@@ -1,9 +1,11 @@
+package modelo;
+
 public class Secretaria {
     private int idSecretaria;
     private String nome;
     private String turno;
 
-    public Secretaria(int idSecretaria, String nome, String turno){
+    public Secretaria(int idSecretaria, String nome, String turno) {
         this.idSecretaria = idSecretaria;
         this.nome = nome;
         this.turno = turno;
@@ -33,8 +35,7 @@ public class Secretaria {
         this.turno = turno;
     }
 
-    @Override
-    public String toString(){
-        return "ID:" + idSecretaria + "Nome: " + nome + "Turno: " + turno;
+    public String toCSV() {
+        return String.join(";", Integer.toString(idSecretaria), nome, turno);
     }
 }

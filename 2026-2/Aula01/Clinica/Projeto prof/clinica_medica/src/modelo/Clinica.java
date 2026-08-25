@@ -1,10 +1,12 @@
+package modelo;
+
 public class Clinica {
     private int idClinica;
     private String nomeClinica;
     private String endereco;
     private String telefone;
 
-    public Clinica(int idClinica, String nomeClinica, String enedereco, String telefone){
+    public Clinica(int idClinica, String nomeClinica, String endereco, String telefone) {
         this.idClinica = idClinica;
         this.nomeClinica = nomeClinica;
         this.endereco = endereco;
@@ -43,8 +45,13 @@ public class Clinica {
         this.telefone = telefone;
     }
 
-    @Override
-    public String toString(){
-        return "ID: " + idClinica + "Nome: " + nomeClinica + "Endereço: " + endereco + "Telefone: " + telefone;
+    public void atualizarClinica(String novoNome, String novoTelefone, String novoEndereco) {
+        this.nomeClinica = novoNome;
+        this.telefone = novoTelefone;
+        this.endereco = novoEndereco;
+    }
+
+    public String toCSV() {
+        return String.join(";", Integer.toString(idClinica), nomeClinica, endereco, telefone);
     }
 }
