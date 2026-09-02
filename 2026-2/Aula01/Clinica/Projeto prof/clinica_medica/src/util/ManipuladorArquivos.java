@@ -1,9 +1,10 @@
 package util;
+
 import modelo.*;
+
 import javax.swing.*;
 import java.io.*;
 import java.sql.Time;
-import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -120,7 +121,7 @@ public class ManipuladorArquivos {
     public static List<Paciente> lerPacientes() {
         List<Paciente> lista = new ArrayList<>();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        for (String[] campos : ler("model.Paciente", 5)) {
+        for (String[] campos : ler("Paciente", 5)) {
             try {
                 int id = Integer.parseInt(campos[0]);
                 String nome = campos[1];
@@ -129,7 +130,7 @@ public class ManipuladorArquivos {
                 String email = campos[4];
                 lista.add(new Paciente(id, nome, dataNascimento, telefone, email));
             } catch (Exception e) {
-                System.err.println("Erro ao ler paciente: "+ e + Arrays.toString(campos));
+                System.err.println("Erro ao ler paciente: " + Arrays.toString(campos));
             }
         }
         return lista;
@@ -137,7 +138,7 @@ public class ManipuladorArquivos {
 
     public static List<Medico> lerMedicos() {
         List<Medico> lista = new ArrayList<>();
-        for (String[] campos : ler("model.Medico", 4)) {
+        for (String[] campos : ler("Medico", 4)) {
             try {
                 int id = Integer.parseInt(campos[0]);
                 String nome = campos[1];
@@ -153,7 +154,7 @@ public class ManipuladorArquivos {
 
     public static List<Clinica> lerClinicas() {
         List<Clinica> lista = new ArrayList<>();
-        for (String[] campos : ler("model.Clinica", 4)) {
+        for (String[] campos : ler("Clinica", 4)) {
             try {
                 int id = Integer.parseInt(campos[0]);
                 String nome = campos[1];
@@ -169,7 +170,7 @@ public class ManipuladorArquivos {
 
     public static List<Secretaria> lerSecretarias() {
         List<Secretaria> lista = new ArrayList<>();
-        for (String[] campos : ler("model.Secretaria", 3)) {
+        for (String[] campos : ler("Secretaria", 3)) {
             try {
                 int id = Integer.parseInt(campos[0]);
                 String nome = campos[1];
@@ -185,7 +186,7 @@ public class ManipuladorArquivos {
     public static List<Agendamento> lerAgendamentos() {
         List<Agendamento> lista = new ArrayList<>();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        for (String[] campos : ler("model.Agendamento", 6)) {
+        for (String[] campos : ler("Agendamento", 6)) {
             try {
                 int id = Integer.parseInt(campos[0]);
                 int idPaciente = Integer.parseInt(campos[1]);

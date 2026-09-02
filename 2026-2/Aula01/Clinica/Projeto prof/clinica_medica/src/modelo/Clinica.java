@@ -1,5 +1,7 @@
 package modelo;
 
+import util.ManipuladorArquivos;
+
 public class Clinica {
     private int idClinica;
     private String nomeClinica;
@@ -49,6 +51,14 @@ public class Clinica {
         this.nomeClinica = novoNome;
         this.telefone = novoTelefone;
         this.endereco = novoEndereco;
+    }
+
+    public void cadastrarMedico(Medico novoMedico) {
+        ManipuladorArquivos.salvarObjeto("medicos",novoMedico,4);
+    }
+
+    public void cadastrarSecretaria(Secretaria novaSecretaria) {
+        ManipuladorArquivos.salvarObjeto("secretaria",novaSecretaria,3);
     }
 
     public String toCSV() {

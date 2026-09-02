@@ -1,5 +1,10 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import util.ManipuladorArquivos;
+
 public class Medico {
     private int idMedico;
     private String nome;
@@ -43,6 +48,37 @@ public class Medico {
 
     public void setCrm(String crm) {
         this.crm = crm;
+    }
+
+    public List<Agendamento> listarAgendamentos() {
+        List<Agendamento> todos = ManipuladorArquivos.lerAgendamentos();
+        List<Agendamento> meus = new ArrayList<>();
+        for (Agendamento ag : todos) {
+            if (ag.getIdMedico() == this.idMedico) {
+                meus.add(ag);
+            }
+        }
+        return meus;
+    }
+
+    public boolean atualizarStatusAgendamento(int idAgendamento, String novoStatus) {
+        List<Agendamento> agendamentos = ManipuladorArquivos.lerAgendamentos();
+        Agendamento encontrou = null;
+
+        for (Agendamento ag : agendamentos) {
+            if (ag.getIdAgendamento() == idAgendamento && ag.getIdMedico() == this.idMedico) {
+                ag.setStatus(novoStatus);
+                encontrou = ag;
+                break;
+            }
+        }
+
+        if (encontrou!=null) {
+            ManipuladorArquivos.atualizarObjeto("Agendamento", encontrou.getIdAgendamento(), encontrou, 6);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public String toCSV() {
