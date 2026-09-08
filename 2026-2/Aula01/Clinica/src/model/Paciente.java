@@ -72,7 +72,7 @@ public class Paciente {
         List<Agendamento> todos = ManipuladorArquivos.lerAgendamentos();
         List<Agendamento> meus = new ArrayList<>();
         for(Agendamento ag : todos){
-            if(ag.getIdPaciente() = this.idPaciente){
+            if(ag.getIdPaciente() == this.idPaciente){
                 meus.add(ag);
             }
         }

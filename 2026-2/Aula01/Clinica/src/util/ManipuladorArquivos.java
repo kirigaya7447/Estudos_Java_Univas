@@ -110,7 +110,7 @@ public class ManipuladorArquivos {
         }
     }
 
-    public int proximoId(String nomeClasse){
+    public static int proximoId(String nomeClasse){
         List<String[]> lista = ler(nomeClasse, -1);
         int maiorId = 0;
 

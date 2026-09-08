@@ -1,6 +1,7 @@
 package model;
 
 import util.ManipuladorArquivos;
+import control.*;
 
 public class Secretaria {
     private int idSecretaria;
@@ -38,7 +39,7 @@ public class Secretaria {
     }
 
     public void cadastrarPaciente(Paciente paciente){
-        ManipuladorArquivos.atualizarObjeto("Paciente", paciente, 5);
+        ManipuladorArquivos.atualizarObjeto("Paciente", ManipuladorArquivos.proximoId("Paciente"),paciente, 5);
     }
 
     public void atualizarContatoPaciente(int idPaciente, String novoTelefone, String novoEmail){
