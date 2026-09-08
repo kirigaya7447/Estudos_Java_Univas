@@ -1,5 +1,7 @@
 package model;
 
+import util.ManipuladorArquivos;
+
 public class Clinica {
     private int idClinica;
     private String nomeClinica;
@@ -45,8 +47,26 @@ public class Clinica {
         this.telefone = telefone;
     }
 
+    public void atualizarClinica(String novoNome, String novoTelefone, String novoEndereco){
+        this.nomeClinica = novoNome;
+        this.telefone = novoTelefone;
+        this.endereco = novoEndereco;
+    }
+
+    public void cadastrarMedico(Medico novoMedico){
+        ManipuladorArquivos.salvarObjeto("Medico", novoMedico, 4);
+    }
+
+    public void cadastrarSecretaria(Secretaria novaSecretaria){
+        ManipuladorArquivos.salvarObjeto("Secretaria", novaSecretaria, 3);
+    }
+
     @Override
     public String toString(){
         return "ID: " + idClinica + "Nome: " + nomeClinica + "Endereço: " + endereco + "Telefone: " + telefone;
+    }
+
+    public String toCSV(){
+        return String.join(";", Integer.toString(idClinica), nomeClinica, endereco, telefone);
     }
 }

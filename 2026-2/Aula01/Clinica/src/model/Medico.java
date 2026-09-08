@@ -1,5 +1,10 @@
 package model;
 
+import util.ManipuladorArquivos;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Medico {
     private int idMedico;
     private String nome;
@@ -45,8 +50,43 @@ public class Medico {
         this.crm = crm;
     }
 
+    public List<Agendamento> listarAgendamentos(){
+        List<Agendamento> todos = ManipuladorArquivos.lerAgendamentos();
+        List<Agendamento> meus = new ArrayList<>();
+        for(Agendamento ag : todos){
+            if(ag.getIdMedico() == this.idMedico){
+                meus.add(ag);
+            }
+        }
+        return meus;
+    }
+
+    public boolean atualizarStatusAgendamento(int idAgendamento, String novoStatus){
+        List<Agendamento> agendamentos = ManipuladorArquivos.lerAgendamentos();
+        Agendamento encontrou = null;
+
+        for(Agendamento ag : agendamentos){
+            if(ag.getIdAgendamento() == idAgendamento && ag.getIdMedico() == this.idMedico){
+                ag.setStatus(novoStatus);
+                encontrou = ag;
+                break;
+            }
+        }
+        if(encontrou != null){
+            ManipuladorArquivos.atualizarObjeto("Agendamento", encontrou.getIdAgendamento(), encontrou, 6);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     @Override
     public String toString(){
         return "ID: " + idMedico + "Nome: " + nome + "Especialidade: " + especialidade + "CRM: " + crm;
+    }
+
+    public String toCSV(){
+        return String.join(";", Integer.toString(idMedico), nome, especialidade, crm);
     }
 }

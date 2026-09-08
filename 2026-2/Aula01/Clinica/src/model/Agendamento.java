@@ -1,16 +1,21 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.sql.Time;
 
 public class Agendamento {
     private int idAgendamento;
+    private int idPaciente;
+    private int idMedico;
     private Date data;
     private Time hora;
     private String status;
 
-    public Agendamento(int idAgendamento, Date data, Time hora, String status){
+    public Agendamento(int idAgendamento, int idPaciente, int idMedico, Date data, Time hora, String status) {
         this.idAgendamento = idAgendamento;
+        this.idPaciente = idPaciente;
+        this.idMedico = idMedico;
         this.data = data;
         this.hora = hora;
         this.status = status;
@@ -22,6 +27,22 @@ public class Agendamento {
 
     public void setIdAgendamento(int idAgendamento) {
         this.idAgendamento = idAgendamento;
+    }
+
+    public int getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(int idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public int getIdMedico() {
+        return idMedico;
+    }
+
+    public void setIdMedico(int idMedico) {
+        this.idMedico = idMedico;
     }
 
     public Date getData() {
@@ -53,5 +74,10 @@ public class Agendamento {
         String data = this.data.toString();
         String hora = this.hora.toString();
         return "ID: " + idAgendamento + "Data: " + data + "Hora: " + hora + "Status: " + status;
+    }
+
+    public String toCSV(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return String.join(";", String.valueOf(idAgendamento), String.valueOf(idPaciente), String.valueOf(idMedico), sdf.format(data), hora.toString(), status);
     }
 }
