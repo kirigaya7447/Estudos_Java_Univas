@@ -4,10 +4,10 @@ import java.util.Date;
 
 public abstract class Pessoa {
     private String nome;
-    private String idade;
+    private int idade;
     private String registroGeral;
 
-    public Pessoa(String nome, String idade, String registroGeral){
+    public Pessoa(String nome, int idade, String registroGeral){
         this.nome = nome;
         this.idade = idade;
         this.registroGeral = registroGeral;
@@ -27,11 +27,11 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public String getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(String idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
