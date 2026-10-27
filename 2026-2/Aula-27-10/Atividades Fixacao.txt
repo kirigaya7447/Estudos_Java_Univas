@@ -1,0 +1,30 @@
+Modelando um Animal
+1. Cenário: Você está modelando um sistema para um zoológico. É necessário criar a classe Cachorro e a classe Animal. A classe Animal possui atributos como peso e o método comer().
+A classe Cachorro é uma especialização que precisa dos atributos e métodos de Animal, além de possuir um método específico latir(). 
+Abordagem Sugerida: [Herança ou Composição?] Herança
+Justificativa: Pois, como o cachorro deriva da espécie animal e não a possui, ele contém métodos que são como os de outros animais, mas sua execução é de sua forma.
+
+2. Modelando um Computador
+Cenário: Você precisa modelar a classe Computador e a classe Processador. Um Computador precisa de um Processador para funcionar. A classe Processador é um componente que executa cálculos.
+Abordagem Sugerida: [Herança ou Composição?] Composição
+Justificativa: Dado que um computador tem um processador e seu funcionamento independe se o processador é específico para ele ou não, eles compartilham alguns atributos em comum, mas que não precisam ser herdados.
+
+
+3. Modelando Permissões de Usuário
+Cenário: Em um sistema de controle de acesso, a classe Usuário precisa de um conjunto de Permissao (como "Administrativa" ou
+"Financeira") para definir o que pode fazer. As Permissao podem mudar (um usuário pode ganhar ou perder permissões dinamicamente). Se a classe Usuario herdar de Permissao, seria difícil mudar esse comportamento em tempo de execução. Abordagem Sugerida: [Herança ou Composição?] Composição
+Justificativa: Já que o atributo permissão pode sofrer alterações recorrentes, de forma menos custosa ao sistema ele funcionará mais adequadamente compondo o usuário e não o herdando.
+
+4. Modelando Formas Geométricas
+Cenário: Você está criando uma biblioteca de gráficos. É necessário criar uma classe base FormaGeometrica com um método calcularArea(). Você precisa criar a classe Quadrado e a classe Circulo, que são, obviamente, tipos de formas geométricas.
+Ambas as subclasses devem poder ser tratadas como uma FormaGeometrica genérica em um método de renderização (Princípio LSP).
+Abordagem Sugerida: [Herança ou Composição?] Herança
+Justificativa: Dado que círculo e quadrado compartilharam alguns métodos comuns a todos, será mais vantajoso eles herdarem os métodos de uma classe pai FormaGeometrica.
+
+5. Modelando um Carro e seu Motor
+Cenário: Você precisa modelar a classe Carro e a classe Motor. O Carro é o objeto principal que precisa de um Motor para
+realizar o método acelerar(). Em uma oficina, o Motor pode ser removido e substituído por outro de um modelo diferente.
+Abordagem Sugerida: [Herança ou Composição?] Composição
+Justificativa: Como o motor pode ser trocado e não será único a cada carro, visto que pode ser modificado, será mais adequado o motor compor o carro, ao invés de ser herdado por ele.
+
+
