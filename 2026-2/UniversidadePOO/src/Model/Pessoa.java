@@ -3,9 +3,9 @@ package Model;
 import java.util.Date;
 
 public abstract class Pessoa {
-    private String nome;
-    private int idade;
-    private String registroGeral;
+    protected String nome;
+    protected int idade;
+    protected String registroGeral;
 
     public Pessoa(String nome, int idade, String registroGeral){
         this.nome = nome;
