@@ -1,0 +1,11 @@
+REVISÃO SEGUNDO SEMESTRE:
+
+4 pilares da POO:
+
+Encapsulamento: Proteção dos arquivos para segurança do acesso aos métodos;
+
+Herança: Reutilização do código e organização na definição da hierarquia das classes;
+
+Abstração: Classes que abstraem dados ou métodos deixando apenas o necessário visível para o usuário;
+
+Polimorfismo: Reescrita de códigos herdados através da herança para nichar as classes.

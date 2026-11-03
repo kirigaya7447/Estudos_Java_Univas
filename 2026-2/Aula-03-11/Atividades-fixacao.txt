@@ -1,0 +1,44 @@
+Questão 1: Processamento de Dados Financeiros
+Cenário: Você está desenvolvendo uma classe ProcessadorDeDados. O sistema precisa processar transações financeiras.
+Deve existir um método que recebe uma lista de transações(List<Transacao>).
+Deve existir um método que recebe uma única transação(Transacao).
+Tipo de Polimorfismo: Overload
+Justificativa: Cria um novo método com o mesmo nome para receber uma variável diferente da anterior.
+
+__________________________________________________________________________
+Questão 2: Cálculo de Bônus em uma Hierarquia
+Cenário: Em um sistema de folha de pagamento, a classe base é Funcionario e existem subclasses Gerente e Vendedor. Todos os funcionários devem ter um método calcularBonus(). O Gerente calcula o bônus de uma forma (por desempenho da
+equipe). O Vendedor calcula o bônus de outra forma (por vendas realizadas).
+Tipo de Polimorfismo: Override
+Justificativa: O método é sobrescrito, mas sua assinatura se mantém.
+
+__________________________________________________________________________
+Questão 3: Formatação de Saída de Console
+Cenário: Você está na classe UtilitarioDeImpressao. É necessário criar um método imprimir() que possa mostrar dados no console. Uma versão deve receber e imprimir um texto (String).
+Outra versão deve receber e imprimir um número inteiro (int).
+Outra versão deve receber e imprimir um número decimal (double).
+Tipo de Polimorfismo: Overload
+Justificativa: Pois, precisa de uma variável diferente da solicitada no método original!
+
+__________________________________________________________________________
+Questão 4: Movimentação de Personagens em Jogo
+Cenário: Em um jogo, a classe base é Personagem. Os personagens têm um método mover().
+O Dragao (subclasse) deve mover-se voando.
+O Cavaleiro (subclasse) deve mover-se a pé.
+Tipo de Polimorfismo: Override
+Justificativa: O método é o mesmo para os personagens, no entanto o que muda é a sua execução dentro do mesmo.
+
+__________________________________________________________________________
+Questão 5: Construtores Flexíveis
+Cenário: A classe Produto pode ser instanciada de duas maneiras:
+Passando apenas o nome e o preco (construtor básico).
+Passando o nome, o preco e o codigoDeBarras (construtor completo).
+Tipo de Polimorfismo: Overload
+Justificativa: Já que este sistema implementa a função com mesmo nome e possibilita tratar tipos diferentes de envio das variáveis.
+
+__________________________________________________________________________
+Questão 6: Aplicação de Taxas em Contas (Revisão)
+Cenário: Em seu sistema bancário, a classe base é Conta.
+O método aplicarTaxaAnual() na classe base deve ser diferente na subclasse ContaSalario, que é isenta de taxas anuais.
+Tipo de Polimorfismo: Override
+Justificativa: Pois, o que irá mudar é o conteúdo dentro da subclasse, mas não sua assinatura.
